@@ -32,38 +32,88 @@ async function readFile(filename) {
 async function compile(src) {
 
     let result = src
+    //Variable Declarations
     .replace(/a che/g, 'var')
-    .replace(/dekho/g, 'return')
+    .replace(/a che j/g, 'const')
+    .replace(/a ne raheva do/g, 'let')
+    
+    //Control
+    .replace(/kaam/g, 'function')
+    .replace(/pacho jao/g, 'return')
     .replace(/jo/g, 'if')
-    .replace(/ane/g, 'else if')
+    .replace(/ane jo/g, 'else if')
     .replace(/nahi to/g, 'else')
+    .replace(/pacha pharo/g, 'default')
+    .replace(/badli karo/g, 'switch')
+    .replace(/prasang/g, 'case')
+    .replace(/kadhi nakho/g, 'delete')
+    
+    //Looping
+    .replace(/karo/g, 'do')
     .replace(/jyare/g, 'while')
     .replace(/mate/g, 'for')
     .replace(/tuto/g, 'break')
+    .replace(/jao/g, 'continue')
+    .replace(/ma/g, 'in')
+    
+    //Values
     .replace(/sachu/g, 'true')
     .replace(/khotu/g, 'false')
     .replace(/nala/g, 'null')
-    .replace(/kaam/g, 'function')
+    .replace(/khabar nathi/g, 'undefined')
+    .replace(/su che/g, 'typeof')
+    
+    //Comparison ops
     .replace(/hoy/g, '==')
-    .replace(/kadak hoy/g, '===')
-    .replace(/jao/g, 'continue')
-    .replace(/baki/g, 'default')
-    .replace(/kadhi nakho/g, 'delete')
-    .replace(/karo/g, 'do')
-    .replace(/udti/g, 'float')
-    .replace(/macchara nathi/g, 'debugger')
+    .replace(/hoy j/g, '===')
+    .replace(/na hoy/g, '!=')
+    .replace(/na j hoy/g, '!==')
+    .replace(/ochu/g, '<')
+    .replace(/ochu hoy/g, '<=')
+    .replace(/motu/g, '>')
+    .replace(/motu hoy/g, '>=')
+    .replace(/ane/g, '&&')
+    .replace(/athava/g, '||')
+    .replace(/nathi /g, '!') //usage example: nathi true -> !true
+    
+    //Error handling
+    .replace(/phenko/g, 'throw')
+    .replace(/prayatna karo/g, 'try')
+    .replace(/pakad/g, 'catch')
+    .replace(/bhul/g, 'Error')
+    
+    //classes/objects, modules
     .replace(/bahar jao/g, 'export')
     .replace(/andar avo/g, 'import')
-    .replace(/tya jao/g, 'goto')
-    .replace(/ma/g, 'in')
-    .replace(/baharni jagya/g, 'public')
-    .replace(/phenkavum/g, 'throw')
-    .replace(/sathe/g, 'with')
-    .replace(/pakadyo/g, 'catch')
     .replace(/navu/g, 'new')
-    .replace(/koi khyal nathi/g, 'undefined')
     .replace(/varga/g, 'class')
-    .replace(/a su che/g, 'typeof');
+    .replace(/a/g, 'this')
+    .replace(/uttam/g, 'super')
+    
+    //arith operators
+    .replace(/ni shakti che/g, '**')
+    .replace(/ne/g, '+')
+    .replace(/baad karo/g, '-')
+    .replace(/guni nakho/g, '*')
+    .replace(/bhagi nakho/g, '/')
+    .replace(/baki/g, '%')
+    
+    //compound assignment 
+    .replace(/ne add karo/g, '+=')
+    .replace(/ne baad karo/g, '-=')
+    .replace(/ne guni nakho/g, '*=')
+    .replace(/ne bhagi nakho/g, '/=')
+    .replace(/ma thi baki hoy/g, '%=')
+    .replace(/ne shakti aapo/g, '**=')
+        //usage for these: please use space before evoking, as syntax highlighting may not work as intended
+        //e. g. -> 67 ne ek thi moto karo
+    .replace(/ ne ek thi moto karo/g, '++')
+    .replace(/ ne ek thi nano karo/g, '--')
+    
+    //comments
+    .replace(/vaat chhe/g, '//')
+    .replace(/moti vaat chhe/, '/*')
+    .replace(/vaat pati gayi/, '*/')
 
     return result;
 
