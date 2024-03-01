@@ -1,0 +1,16 @@
+{
+  "name": "betalang",
+  "version": "1.0.2",
+  "description": "A language for all the betas out there! Written in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "beta": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
