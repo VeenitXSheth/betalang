@@ -1,6 +1,6 @@
 # BetaLang
 
-This is the official repository for BetaLang, a language written for all the beta's out there by beta's.
+This is the official repository for BetaLang - a language written for all the betas out there, by betas.
 
 ## Installation
 
@@ -20,40 +20,69 @@ BetaLang will only run the entrypoint file listed in **betaconfig.json**. Anythi
 
 ### Syntax
 
-| BetaLang Keyword | JavaScript Keyword |
-| ---------------- | ------------------ |
-| a che            | var                |
-| dekho            | return             |
-| jo               | if                 |
-| ane              | else if            |
-| nahi to          | else               |
-| jyare            | while              |
-| mate             | for                |
-| tuto             | break              |
-| sachu            | true               |
-| khotu            | false              |
-| nala             | null               |
-| kaam             | function           |
-| hoy              | ==                 |
-| kadak hoy        | ===                |
-| jao              | continue           |
-| baki             | default            |
-| kadhi nakho      | delete             |
-| karo             | do                 |
-| udti             | float              |
-| macchara nathi   | debugger           |
-| bahar jao        | export             |
-| andar avo        | import             |
-| tya jao          | goto               |
-| ma               | in                 |
-| baharni jagya    | public             |
-| phenkavum        | throw              |
-| sathe            | with               |
-| pakadyo          | catch              |
-| navu             | new                |
-| koi khyal nathi  | undefined          |
-| varga            | class              |
-| a su che         | typeof             |
+| BetaLang            | JavaScript |
+| ------------------- | ---------- |
+| a che               | var        |
+| a che j             | const      |
+| a ne raheva do      | let        |
+| kaam                | function   |
+| pacho jao           | return     |
+| jo                  | if         |
+| ane jo              | else if    |
+| nahi to             | else       |
+| pacha pharo         | default    |
+| badli karo          | switch     |
+| prasang             | case       |
+| kadhi nakho         | delete     |
+| karo                | do         |
+| jyare               | while      |
+| mate                | for        |
+| tuto                | break      |
+| jao                 | continue   |
+| ma                  | in         |
+| sachu               | true       |
+| khotu               | false      |
+| nala                | null       |
+| khabar nathi        | undefined  |
+| su che              | typeof     |
+| hoy                 | \==        |
+| hoy j               | \===       |
+| na hoy              | !=         |
+| na j hoy            | !==        |
+| ochu                | <          |
+| ochu hoy            | <=         |
+| motu                | \>         |
+| motu hoy            | \>=        |
+| ane                 | &&         |
+| athava              | ||         |
+| nathi               | !          |
+| phenko              | throw      |
+| prayatna karo       | try        |
+| pakad               | catch      |
+| Bhul                | Error      |
+| bahar jao           | export     |
+| andar avo           | import     |
+| navu                | new        |
+| varga               | class      |
+| a                   | this       |
+| uttam               | super      |
+| ni shakti che       | \*\*       |
+| ne                  | +          |
+| baad karo           | \-         |
+| guni nakho          | \*         |
+| bhagi nakho         | /          |
+| baki                | %          |
+| ne add karo         | +=         |
+| ne baad karo        | \-=        |
+| ne guni nakho       | \*=        |
+| ne bhagi nakho      | /=         |
+| ma thi baki hoy     | %=         |
+| ne shakti aapo      | \*\*=      |
+| ne ek thi moto karo | ++         |
+| ne ek thi nano karo | \--        |
+| vaat chhe           | //         |
+| moti vaat chhe      | /\*        |
+| vaat pati gayi      | \*/        |
 
 ## Development
 
