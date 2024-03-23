@@ -30,91 +30,76 @@ async function readFile(filename) {
 
 
 async function compile(src) {
-
     let result = src
-    //Variable Declarations
-    .replace(/a che/g, 'var')
-    .replace(/a che j/g, 'const')
-    .replace(/a ne raheva do/g, 'let')
-    
-    //Control
-    .replace(/kaam/g, 'function')
-    .replace(/pacho jao/g, 'return')
-    .replace(/jo/g, 'if')
-    .replace(/ane jo/g, 'else if')
-    .replace(/nahi to/g, 'else')
-    .replace(/pacha pharo/g, 'default')
-    .replace(/badli karo/g, 'switch')
-    .replace(/prasang/g, 'case')
-    .replace(/kadhi nakho/g, 'delete')
-    
-    //Looping
-    .replace(/karo/g, 'do')
-    .replace(/jyare/g, 'while')
-    .replace(/mate/g, 'for')
-    .replace(/tuto/g, 'break')
-    .replace(/jao/g, 'continue')
-    .replace(/ma/g, 'in')
-    
-    //Values
-    .replace(/sachu/g, 'true')
-    .replace(/khotu/g, 'false')
-    .replace(/nala/g, 'null')
-    .replace(/khabar nathi/g, 'undefined')
-    .replace(/su che/g, 'typeof')
-    
-    //Comparison ops
-    .replace(/hoy/g, '==')
-    .replace(/hoy j/g, '===')
-    .replace(/na hoy/g, '!=')
-    .replace(/na j hoy/g, '!==')
-    .replace(/ochu/g, '<')
-    .replace(/ochu hoy/g, '<=')
-    .replace(/motu/g, '>')
-    .replace(/motu hoy/g, '>=')
-    .replace(/ane/g, '&&')
-    .replace(/athava/g, '||')
-    .replace(/nathi /g, '!') //usage example: nathi true -> !true
-    
-    //Error handling
-    .replace(/phenko/g, 'throw')
-    .replace(/prayatna karo/g, 'try')
-    .replace(/pakad/g, 'catch')
-    .replace(/bhul/g, 'Error')
-    
-    //classes/objects, modules
-    .replace(/bahar jao/g, 'export')
-    .replace(/andar avo/g, 'import')
-    .replace(/navu/g, 'new')
-    .replace(/varga/g, 'class')
-    .replace(/a/g, 'this')
-    .replace(/uttam/g, 'super')
-    
-    //arith operators
-    .replace(/ni shakti che/g, '**')
-    .replace(/ne/g, '+')
-    .replace(/baad karo/g, '-')
-    .replace(/guni nakho/g, '*')
-    .replace(/bhagi nakho/g, '/')
-    .replace(/baki/g, '%')
-    
-    //compound assignment 
-    .replace(/ne add karo/g, '+=')
-    .replace(/ne baad karo/g, '-=')
-    .replace(/ne guni nakho/g, '*=')
-    .replace(/ne bhagi nakho/g, '/=')
-    .replace(/ma thi baki hoy/g, '%=')
-    .replace(/ne shakti aapo/g, '**=')
-        //usage for these: please use space before evoking, as syntax highlighting may not work as intended
-        //e. g. -> 67 ne ek thi moto karo
-    .replace(/ ne ek thi moto karo/g, '++')
-    .replace(/ ne ek thi nano karo/g, '--')
-    
-    //comments
-    .replace(/vaat chhe/g, '//')
-    .replace(/moti vaat chhe/, '/*')
-    .replace(/vaat pati gayi/, '*/')
 
+    .replace(/\bconsole ma\b/g, 'console.log(')
+    .replace(/\blakho\b/g, ')')
+    .replace(/\bne ek thi moto karo\b/g, '++')
+    .replace(/\bne ek thi nano karo\b/g, '--')
+    .replace(/\bni shakti che\b/g, '**')
+    .replace(/\ba ne raheva do\b/g, 'let')
+    .replace(/\bne add karo\b/g, '+=')
+    .replace(/\bne baad karo\b/g, '-=')
+    .replace(/\bne guni nakho\b/g, '*=')
+    .replace(/\bne bhagi nakho\b/g, '/=')
+    .replace(/\bma thi baki hoy\b/g, '%=')
+    .replace(/\bne shakti aapo\b/g, '**=')
+    .replace(/\bmoti vaat chhe/, '/*')
+    .replace(/\bvaat pati gayi/, '*/')
+    .replace(/\bprayatna karo\b/g, 'try')
+    .replace(/\bpacha pharo\b/g, 'default')
+    .replace(/\bbadli karo\b/g, 'switch')
+    .replace(/\bbaad karo\b/g, '-')
+    .replace(/\bguni nakho\b/g, '*')
+    .replace(/\bbhagi nakho\b/g, '/')
+    .replace(/\bprasang\b/g, 'case')
+    .replace(/\bkadhi nakho\b/g, 'delete')
+    .replace(/\bvaat chhe\b/g, '//')
+    .replace(/\bsachu\b/g, 'true')
+    .replace(/\bkhotu\b/g, 'false')
+    .replace(/\bnala\b/g, 'null')
+    .replace(/\bkhabar nathi\b/g, 'undefined')
+    .replace(/\bbahar jao\b/g, 'export')
+    .replace(/\bandar avo\b/g, 'import')
+    .replace(/\bsu che\b/g, 'typeof')
+    .replace(/\bkaam\b/g, 'function')
+    .replace(/\bpacho jao\b/g, 'return')
+    .replace(/\bane jo\b/g, 'else if')
+    .replace(/\bnahi to\b/g, 'else')
+    .replace(/\bjo\b/g, 'if')
+    .replace(/\bphenko\b/g, 'throw')
+    .replace(/\bpakad\b/g, 'catch')
+    .replace(/\bBhul\b/g, 'Error')
+    .replace(/\bnavu\b/g, 'new')
+    .replace(/\bvarga\b/g, 'class')
+    .replace(/\buttam\b/g, 'super')
+    .replace(/\ba che j\b/g, 'const')
+    .replace(/\ba che\b/g, 'var')
+    .replace(/\bmotu hoy\b/g, '>=')
+    .replace(/\bna j hoy\b/g, '!==')
+    .replace(/\bhoy j\b/g, '===')
+    .replace(/\bna hoy\b/g, '!=')
+    .replace(/\bochu hoy\b/g, '<=')
+    .replace(/\bhoy\b/g, '==')
+    .replace(/\bochu\b/g, '<')
+    .replace(/\bmotu\b/g, '>')
+    .replace(/\bane\b/g, '&&')
+    .replace(/\bathava\b/g, '||')
+    .replace(/\bnathi\b/g, '!')
+    .replace(/\bne\b/g, '+')
+    .replace(/\bbaki\b/g, '%')
+    .replace(/\bkaro\b/g, 'do')
+    .replace(/\bjyare\b/g, 'while')
+    .replace(/\bmate\b/g, 'for')
+    .replace(/\btuto\b/g, 'break')
+    .replace(/\bjao\b/g, 'continue')
+    .replace(/\bma thi\b/g, 'of')
+    .replace(/\bma\b/g, 'in')
+    .replace(/\ba\b/g, 'this')
+
+    
+
+    console.log(result)
     return result;
 
 }
