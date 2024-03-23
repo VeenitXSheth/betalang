@@ -99,7 +99,7 @@ async function compile(src) {
 
     
 
-    console.log(result)
+
     return result;
 
 }
