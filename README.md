@@ -54,7 +54,7 @@ BetaLang will only run the entrypoint file listed in **betaconfig.json**. Anythi
 | motu                | \>         |
 | motu hoy            | \>=        |
 | ane                 | &&         |
-| athava              | ||         |
+| athava              | \|\|       |
 | nathi               | !          |
 | phenko              | throw      |
 | prayatna karo       | try        |
