@@ -83,6 +83,7 @@ BetaLang will only run the entrypoint file listed in **betaconfig.json**. Anythi
 | vaat chhe           | //         |
 | moti vaat chhe      | /\*        |
 | vaat pati gayi      | \*/        |
+| console ma \<args\> lakho| console.log(args)|
 
 ## Development
 
